@@ -1,0 +1,311 @@
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Merriweather Sans", sans-serif;
+}
+
+/* My defined global variable Color */
+:root {
+    --colorDark1: #112d4e;
+    --colorDark2: #3f72af;
+    --colorLight1: #dbe2ef;
+    --colorLight2: #f9f7f7;
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+
+.wrapper{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    color: var(--colorLight2);
+    background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);   /* my own lg-color by using angry gradiant */
+}
+
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    /* padding-top : 20px; */
+    word-spacing: 2px;
+    letter-spacing: 1.75px;
+    margin-block: 2rem;
+}
+
+.tab-container{
+    width: 90%;
+    max-width: 550px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto; 
+    margin-top: 4rem;
+}
+
+.tab{
+    cursor: pointer;
+    font-size: 0.875rem;
+    letter-spacing: 1.75px;
+    padding: 5px 8px;
+}
+
+.tab.current-Tab{
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 4px;
+}
+
+/* .form-container.active {
+    scale: 1;
+    opacity: 1;
+    display: flex;
+} */
+
+
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* weather container/ Main Container*/
+
+.weather-container{
+    margin-block: 4rem;
+}
+
+.btn{
+    all: unset; /* it unset al its default styling */
+    cursor: pointer;
+    background-color: var(--colorDark2);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    border-radius: 5px    ;
+} 
+
+
+.sub-container{
+    width: 90%;  
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/*-------------------------- Form Container Starts------------------------------------*/
+
+.form-container{
+    width: 90%;
+    max-width: 550px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 0 10px;
+ }
+ .form-container.active{
+    display: flex;
+ }
+ 
+ .form-container input{
+    all: unset;
+    width: calc(100% - 80px);
+    height: 40px;
+    padding: 0 20px;
+    background-color: rgba(219, 226, 239, 0.5);
+    border-radius: 10px;
+ }
+ 
+ .form-container input:focus{
+    outline: 3px solid rgba(255, 255, 255, 0.7);
+ }
+ 
+ .form-container input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+ }
+ 
+ .form-container .btn{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    padding: unset;
+ }
+ 
+ .form-container .btn img {
+    object-fit: contain;
+ }
+ 
+ 
+ 
+ /*----------------------------------------Form Container Ends ----------------------------------------*/
+ 
+
+/*  Grant Location Container */
+
+.grant-location-container{
+    display: none;
+}
+.grant-location-container.active{
+    display: flex;
+}
+
+.grant-location-container img{
+    margin-bottom: 2rem;
+}
+
+.grant-location-container p:first-of-type{
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-align: center;
+}
+.grant-location-container p:last-of-type{
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.75px;
+}
+/* Grant Location End  */
+
+/*----------------------------------- user info container------------------------------------------*/
+
+.user-info-container{
+    display: none;
+}
+.user-info-container.active{
+    display: flex;
+}
+.user-info-container p{
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+
+.user-info-container img{
+    height: 90px;
+    width: 90px; 
+}
+
+.name{
+    display: flex;
+    align-items: center;
+    gap: 0 0.5rem;
+    margin-bottom: 1rem; 
+
+}
+
+
+.name p{
+    font-size: 2rem;
+}
+
+.name img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.user-info-container p[data-temp] {
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+.user-info-container p[data-weatherDesc] {
+    text-transform: capitalize;
+    font-size: 1.2rem;
+}
+
+/* ---------------------------------------User Info Container Ends ------------------------------------*/
+
+
+/*------------------------------------Grant Location Ends--------------------------*/
+
+/* Loading Container */
+
+.loading-container{
+    display: none;
+}
+
+.loading-container.active{
+    display: flex;
+}
+
+.loading-container p{
+    text-transform: uppercase;
+}
+
+/* Loading Container End  */
+
+
+/* parameter-container */
+
+.parameter-container{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    gap: 10px 20px;
+    margin: 1.6rem auto 0;
+    flex-wrap: wrap;
+}
+
+.parameter{
+    width: 30%;
+    max-width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(219, 226, 239, 0.5);
+    padding: 0.8rem;
+    border-radius: 5px;
+    gap: 5px 0; 
+}
+
+.parameter p {
+    font-size: 1rem;
+    font-size: 600;
+    text-transform: uppercase;
+}
+.parameter img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.parameter p:first-of-type{
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.parameter p:last-of-type{
+    font-size: 1rem;
+    font-weight: 200;
+    
+}
+
+/*----------------------------------Error Container------------------------------------*/
+.error-Container {
+    display: none;
+}
+
+.error-Container.active {
+    display: flex;
+    gap: 1rem 0;
+}
+
+.error-Container p {
+    text-align: center;
+}
+
+.error-Container img {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
